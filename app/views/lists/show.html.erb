@@ -1,0 +1,28 @@
+<div class="container mt-3 mb-3 p-3 bg-light">
+<h1> My List Contents </h1>
+ <br/><br />
+
+<%= "List name: " + @list.name %> 
+<br/><br />
+
+<ul> 
+<% @list.bookmarks.each do |bookmark| %>
+<li> <%= bookmark.movie.title %>
+<li> <%= bookmark.comment %> </li>
+<% end %>
+</ul>
+
+<%# <%= link_to "Edit this list", list_edit_path(@list)
+ %>
+<br/><br />
+<div class="container mt-3 mb-3 p-3 bg-light">
+  <%= link_to "Add a bookmark", new_list_bookmark_path(@list) %>
+</div>
+
+<br/><br />
+<%= link_to "Delete this list", list_path(@list), method: :delete, data: { confirm: "Are you sure?" } %>
+ 
+<br/><br />
+<%= link_to "Go back to list", lists_path %>
+
+</div>

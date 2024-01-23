@@ -1,0 +1,8 @@
+<h1> Edit your list </h1>
+
+<%= simple_form_for @list do |f| %>
+  <%= f.input :name %>
+  <%= f.button :submit %>
+<% end %>
+
+<%= link_to "Go back to list", lists_path %>
